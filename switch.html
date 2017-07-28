@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+</head>
+<body>
+
+<p><b>Risks of smoking</b></p>
+  				<div class="group">
+						<input type="checkbox" name='checkboxvar[]' value="one"><a href="#" onclick='addfav("lung cancer")'> lung cancer </a></label></div>
+  
+ 				<div class="group">
+          <input type="checkbox" name='checkboxvar[]' value="two"> <a href="#" onclick='addfav("cancers of the mouth and throat")'> cancers of the mouth and throat</label></div>
+  
+ 				<div class="group">
+          <input type="checkbox" name='checkboxvar[]' value="three" /><a href="#" onclick='addfav("oesophageal cancer")'> oesophageal cancer</label></div>
+  
+ 				<div class="group">
+          <input type="checkbox" name='checkboxvar[]' value="four" /><a href="#" onclick='addfav( "stomach cancer")'> stomach cancer</label></div>
+  
+ 				<div class="group">
+          <input type="checkbox" name='checkboxvar[]' value="five" /> <a href="#" onclick='addfav("liver cancer")'>  liver cancer</label></div>
+  
+ 				<div class="group">
+          <input type="checkbox" name='checkboxvar[]' value="six" /><a href="#" onclick='addfav("cervical cancer")'> cervical cancer</label></div>
+  
+  
+  				<div class="group">
+					<input id="login" type="submit" class="button" value="Submit">
+				</div>
+  
+</body>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+	
+	function addfav(flist){
+
+	alert(flist);
+		user.action="addfav";
+		
+				$.ajax( {
+					url: "http://mt-hiuha007123387678.codeanyapp.com:5001/switch.html",
+					type: "POST",
+					data: user,
+					datatype: "json",
+					success: function (result) {
+						alert(result);
+       			 console.log(result);
+        		if(result.status == 200){
+            		console.log("hope can see here");
+        			}
+    			},
+    			error: function(result){
+        			console.log(result);
+    				}
+				});
+			}
+	
+		
+	
+	
+
+</script>
+</html>

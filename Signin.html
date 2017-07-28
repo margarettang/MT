@@ -3,24 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Singin</title>
+  
   
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
-      <link rel="stylesheet" href="login.css">  
+
+      <link rel="stylesheet" href="Signin.css">
+
+  
 </head>
 
 <body>
-		<body background="smoke.jpg">
-  <!--<div class="login-wrap">
+	<body background="smoke.jpg">
+
+  <!-- <div class="login-wrap">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Register</label>-->
-		<div width="100%" class="login-form">
-							<img src="mickey.png">
-			<!--login-->
-			<div  class="sign-in-htm">
-
-				<form>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Register</label>
+		<div class="login-form">
+			
+			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
 					<input id="log_user" name="log_ac" type="text" class="input" placeholder="Enter username">
@@ -36,18 +38,13 @@
 				<div class="foot-lnk">
 					<a href="./index.html">Home Page</a>
 				</div>
-
-			</div>
+			</div> -->
 			
-		</div>
-									</form>
-	</div>
-				
-</div>
-			<!--
-		  
-			<div class="sign-up-htm">
-				<div class="group">
+			<!--sign up-->
+			<div width="100%" class="sign-up-htm">
+				<img src="mickey.png">
+				<form>
+		  <div class="group">
 					<label for="user" class="label">Username</label>
 					<input id="user" name="ac" type="text" class="input" placeholder="Enter username">
 				</div>
@@ -68,15 +65,18 @@
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</a>
+				<!--	<label for="tab-1">Already Member?</a> -->
+						<p><a href="login.html"> Registered already? go to Login</a> </p>
 				</div>
+
 			</div>
 			
 		</div>
 	</div>
-</div> -->
-</body>
+										</form>
+</div>
 
+</body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 
@@ -96,12 +96,13 @@
 					type: "POST",
 					data: user,
 					success: function (result) {
-          window.location.href = "activesmoking.html";
+					window.location.href = "activesmoking.html";
           alert(result);
-          //localStorage.setItem("login", user.ac);
-          //var myid=localStorage.getItem("login");
-          //$("#showid").html(myid);
-					  console.log(result);
+          localStorage.setItem("login", user.ac);
+          var myid=localStorage.getItem("login");
+          $("#showid").html(myid);
+						
+       			 console.log(result);
         		if(result.status == 200){
             		console.log("hope can see here");
         			}
